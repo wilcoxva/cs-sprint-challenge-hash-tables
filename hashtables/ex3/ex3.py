@@ -2,10 +2,9 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    dupes = [x for n, x in enumerate(arrays) if x in arrays[:n]]
 
-    return result
-
+    return dupes
 
 if __name__ == "__main__":
     arrays = []

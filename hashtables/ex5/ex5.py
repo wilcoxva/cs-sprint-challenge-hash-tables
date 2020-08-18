@@ -1,14 +1,22 @@
-# Your code here
-
+import os
 
 
 def finder(files, queries):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    x = []
+    for i in files:
+        x.append(i)
+    y = os.path.basename(x)
 
-    return result
+    # How do I get the last part of the path as a key
+
+    # and value is the path
+    # Make array of paths as values
+    # Make the queries a key
+    print(x)
+    # return result
 
 
 if __name__ == "__main__":
