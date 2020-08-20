@@ -9,7 +9,7 @@ def has_negatives(a):
             x[i] = "true"
     for i in a:
         if i < 0:
-            if x[-i] == "true":
+            if -i in x:
                 result.append(-i)
     return result
 
