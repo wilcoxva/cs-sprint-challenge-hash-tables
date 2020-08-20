@@ -1,13 +1,16 @@
-import os
-
+from os.path import basename
 
 def finder(files, queries):
-    
     result = {}
     for f in files:
-        if os.path.basename(f) in queries:
-            result[os.path.basename(f)] = f
-    return result
+        if basename(f) in queries:
+            if basename(f) not in result:
+                result[basename(f)] = [f]
+            else:
+                result[basename(f)].append(f)
+    var = result.values()
+    arr = [item for sublist in var for item in sublist]
+    return arr
 
 
 if __name__ == "__main__":

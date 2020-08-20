@@ -29,15 +29,18 @@ class TestEx2(unittest.TestCase):
         files = []
 
         for i in range(500000):
-            files.append(f"/dir{i}/file{i}")
+            # files.append(f"/dir{i}/file{i}")
+            files.append("/dir{}/file{}".format(i,i))
 
         for i in range(500000):
-            files.append(f"/dir{i}/dirb{i}/file{i}")
+        #   files.append(f"/dir{i}/dirb{i}/file{i}")
+            files.append("/dir{}/dirb{}/file{}".format(i,i,i))
 
         queries = []
 
         for i in range(1000000):
-            queries.append(f"nofile{i}")
+            # queries.append(f"nofile{i}")
+            queries.append("nofile{}".format(i))
 
         queries += [
             "file3490",
