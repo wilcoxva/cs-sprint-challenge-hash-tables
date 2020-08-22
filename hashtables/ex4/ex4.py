@@ -2,8 +2,15 @@ def has_negatives(a):
     """
     YOUR CODE HERE
     """
-    # Your code here
-
+    x = {}
+    result = []
+    for i in a:
+        if i > 0:
+            x[i] = "true"
+    for i in a:
+        if i < 0:
+            if -i in x:
+                result.append(-i)
     return result
 
 

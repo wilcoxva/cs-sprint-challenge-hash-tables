@@ -1,11 +1,16 @@
 def intersection(arrays):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
-
+    in_all = False
+    result = dict()
+    for i in arrays[0]:
+        for array in arrays:
+            if i in array:
+                in_all = True
+            else:
+                in_all = False
+        if in_all:
+            result[i] = True
+    print(result)
     return result
-
 
 if __name__ == "__main__":
     arrays = []
