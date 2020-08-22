@@ -6,18 +6,13 @@ class Ticket:
 
 
 def reconstruct_trip(tickets, length):
-    route = {}
-    dest = "NONE"
+    route = list(range(length))
+    flight_matrix = dict()
+    for ticket in tickets:
+        flight_matrix.update({ticket.source: ticket.destination})
+    
+    src = "NONE"
     for i in range(length):
-        route[i] = ''
-    print("route: {}".format(route))
-    print("route",route)
-    for i in range(length):
-        for ticket in tickets:
-            if ticket.source == dest:
-                print("Found {}".format(dest))
-                route[i] = ticket.destination
-                dest = ticket.destination
-                break
-    print(route)
-    return route
+        route[i] = flight_matrix[src]
+        src = flight_matrix[src]
+    return route 
